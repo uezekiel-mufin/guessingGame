@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Button, Divider } from "@mui/material";
+import { FaPizzaSlice } from "react-icons/fa";
 import "./home.css";
 
 const genNo = Math.floor(Math.random() * (20 - 1 + 1)) + 1;
@@ -37,22 +38,24 @@ const Home = () => {
   const handleBtn2 = () => {
     // eslint-disable-next-line eqeqeq
     if (input == genNo) {
-      startGuessing.current.textContent = "you won";
+      startGuessing.current.textContent = " Yay You won!!!";
       main.current.style.background = "green";
       homeValue.current.style.background = " #9EFD38";
       setHighScoreValue();
+      setScore(0);
+      setInput("");
     }
 
     if (input !== genNo && input > genNo) {
       startGuessing.current.textContent = "Too High, Try Again";
-      main.current.style.background = "	#660000";
+      // main.current.style.background = "	#660000";
 
       setScore(score - 1);
       // gameOver();
     }
     if (input !== genNo && input < genNo) {
       startGuessing.current.textContent = "Too Low, Try Again";
-      main.current.style.background = "	#660000";
+      // main.current.style.background = "	#660000";
 
       setScore(score - 1);
       // gameOver();``
@@ -96,6 +99,7 @@ const Home = () => {
         <div className='bottom'>
           <div className='gridLeft'>
             <input
+              placeholder='guess a number'
               type='number'
               value={input}
               onChange={(e) => setInput(e.target.value)}

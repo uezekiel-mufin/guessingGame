@@ -77,7 +77,7 @@ input {
   background: transparent;
   color: #ffffff;
   border: 3px solid #ffffff;
-  font-weight: 400;
+  font-weight: 700;
 }
 .gridLeft Button {
   width: 50%;
@@ -91,8 +91,9 @@ input {
 
 .start {
   margin-bottom: 2rem;
+  font-size: 1rem;
 }
 
-.css-MuiDivider-root::before {
-  border-top: rgba(255, 255, 255, 1);
+.gridRight h3 {
+  font-size: 1rem;
 }
