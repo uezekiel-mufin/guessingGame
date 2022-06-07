@@ -1,6 +1,6 @@
 ## Title
 
-guessingGame
+The guessingGame
 
 ## General info
 
