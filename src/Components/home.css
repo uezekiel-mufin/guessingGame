@@ -1,0 +1,98 @@
+.home {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 667px;
+  width: 100vw;
+  background-color: rgb(127, 172, 255);
+}
+.main {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
+  /* width: 40vw; */
+  background: #32475c;
+  color: #ffffff;
+  padding: 1rem;
+  margin: 2rem;
+  position: relative;
+  border-radius: 1rem;
+}
+.top {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.5rem;
+}
+
+.top h3 {
+  font-size: 1rem;
+}
+
+.middle {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.guessNo {
+  display: flex;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.guess {
+  display: flex;
+  position: relative;
+}
+
+.genNumber {
+  display: flex;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: 700;
+  background: #ffffff;
+  width: 4rem;
+  color: black;
+}
+
+.bottom {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 3rem;
+}
+.gridLeft {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 1rem;
+}
+
+input {
+  height: 2rem;
+  width: 70%;
+  background: transparent;
+  color: #ffffff;
+  border: 3px solid #ffffff;
+  font-weight: 400;
+}
+.gridLeft Button {
+  width: 50%;
+  background-color: #ffffff;
+  color: #444242;
+}
+.top Button {
+  background-color: #ffffff;
+  color: #444242;
+}
+
+.start {
+  margin-bottom: 2rem;
+}
+
+.css-MuiDivider-root::before {
+  border-top: rgba(255, 255, 255, 1);
+}
