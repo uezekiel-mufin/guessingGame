@@ -10,6 +10,6 @@ This project is a simple web app game showing how to manipulate the DOM element 
 
 Project is created with:
 
-ReactJs
-CSS
-Material ui
+- ReactJs
+- CSS
+- Material ui
