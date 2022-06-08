@@ -89,7 +89,7 @@ const Home = () => {
           <Button variant='contained' size='small' onClick={handleBtn1}>
             Play Again
           </Button>
-          <h3>(Between 1 and 20)</h3>
+          <h3>(Between 1 and 30)</h3>
         </div>
         <div className='middle'>
           <div className='guessNo'>Guess My Number!</div>
