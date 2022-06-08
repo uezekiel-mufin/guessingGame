@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Button, Divider } from "@mui/material";
-import { FaPizzaSlice } from "react-icons/fa";
+
 import "./home.css";
 
-const genNo = Math.floor(Math.random() * (20 - 1 + 1)) + 1;
+const genNo = Math.floor(Math.random() * (30 - 1 + 1)) + 1;
 const Home = () => {
   const main = useRef();
   const startGuessing = useRef(null);
@@ -11,6 +11,8 @@ const Home = () => {
   const scoreNumber = useRef(null);
   const inputValue = useRef(null);
   const homeValue = useRef(null);
+  const gridLeft = useRef(null);
+  const bottomRef = useRef(null);
 
   const [guess, setGuess] = useState("?");
   let [score, setScore] = useState(20);
@@ -26,24 +28,35 @@ const Home = () => {
     if (score < 1) startGuessing.current.textContent = "Game Over";
     // setScore(0);
   };
+
   const handleBtn1 = () => {
     generatedNumber.current.textContent = "?";
     // scoreNumber.current.textContent = "Score: 10";
     setScore(20);
     main.current.style.background = "";
+    startGuessing.current.textContent = "Start guessing...";
     setInput("");
     homeValue.current.style.background = "";
+    gridLeft.current.style.display = "flex";
+    bottomRef.current.style.display = "grid";
+    //  bottomRef.current.style.justifyContent = "center";
     // setHighScoreValue();
   };
   const handleBtn2 = () => {
     // eslint-disable-next-line eqeqeq
     if (input == genNo) {
-      startGuessing.current.textContent = " Yay You won!!!";
+      startGuessing.current.textContent = " Yay You Won!!!";
+      startGuessing.current.style.fontSize = "1rem";
       main.current.style.background = "green";
       homeValue.current.style.background = " #9EFD38";
       setHighScoreValue();
-      setScore(0);
+      // setScore(0);
       setInput("");
+      setGuess(genNo);
+      gridLeft.current.style.display = "none";
+      bottomRef.current.style.display = "flex";
+      bottomRef.current.style.justifyContent = "center";
+      return;
     }
 
     if (input !== genNo && input > genNo) {
@@ -96,9 +109,10 @@ const Home = () => {
             </Divider>
           </div>
         </div>
-        <div className='bottom'>
-          <div className='gridLeft'>
+        <div ref={bottomRef} className='bottom'>
+          <div ref={gridLeft} className='gridLeft'>
             <input
+              ref={inputValue}
               placeholder='guess a number'
               type='number'
               value={input}
